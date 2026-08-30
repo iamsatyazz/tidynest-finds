@@ -8,7 +8,7 @@
     <!-- Pinterest Verification Tag -->
     <meta name="p:domain_verify" content="30d561df671eff10ff2801e62dd140a8"/>
 
-    <!-- Google Fonts: Swapped to Montserrat for a sleek, premium, modern brand look -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -17,14 +17,13 @@
         :root {
             --bg-color: #080a12;
             --main-accent: #ffffff;
-            --secondary-accent: #8e9bb0;
             --text-main: #ffffff;
             --text-muted: rgba(255, 255, 255, 0.6);
             
             --glass-bg: rgba(255, 255, 255, 0.04);
             --glass-border: rgba(255, 255, 255, 0.1);
             --glass-blur: blur(12px);
-            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            --glass-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
         }
 
         * {
@@ -41,11 +40,11 @@
             color: var(--text-main);
             display: flex;
             justify-content: center;
-            min-height: 100vh;
-            padding: 40px 20px;
-            overflow-x: hidden;
+            align-items: center;
+            height: 100vh; /* Locks it to exact screen height */
+            padding: 15px;
+            overflow: hidden; /* Disables scrolling completely */
             
-            /* Subtler, more professional dark gradient */
             background-image: 
                 radial-gradient(circle at 15% 15%, rgba(255, 255, 255, 0.03) 0%, transparent 40%),
                 radial-gradient(circle at 85% 85%, rgba(142, 155, 176, 0.05) 0%, transparent 40%);
@@ -66,58 +65,54 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Professional Logo Section */
         .logo-wrapper {
             position: relative;
-            margin-bottom: 28px;
+            margin-bottom: 15px;
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 120px;
-            height: 120px;
+            width: 90px;
+            height: 90px;
         }
 
-        /* Sleek, thin metallic/glass ring instead of a glowing blob */
         .logo-bg {
             position: absolute;
-            width: 116px;
-            height: 116px;
+            width: 86px;
+            height: 86px;
             border-radius: 50%;
             background: transparent;
             border: 1px solid rgba(255, 255, 255, 0.25);
-            box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.03), 0 4px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.03), 0 4px 15px rgba(0, 0, 0, 0.3);
             z-index: 1;
         }
 
         .profile-img {
-            width: 100px;
-            height: 100px;
+            width: 74px;
+            height: 74px;
             border-radius: 50%;
             object-fit: cover;
             display: block;
             z-index: 2;
-            background: #111; /* Fallback if logo has transparency */
+            background: #111;
         }
 
-        /* Premium Brand Typography */
         h1 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.4rem;
+            font-size: 1.15rem;
             font-weight: 400;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-bottom: 8px;
+            letter-spacing: 3px;
+            margin-bottom: 4px;
             color: #ffffff;
             text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
 
         .tagline {
-            font-size: 0.9rem;
+            font-size: 0.75rem;
             color: var(--text-muted);
             text-align: center;
-            margin-bottom: 35px;
+            margin-bottom: 20px;
             font-weight: 300;
-            line-height: 1.6;
             letter-spacing: 0.5px;
         }
 
@@ -125,7 +120,7 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 10px;
         }
 
         .glass-link {
@@ -133,55 +128,50 @@
             align-items: center;
             justify-content: center;
             width: 100%;
-            padding: 18px 24px;
+            padding: 12px 20px;
             background: var(--glass-bg);
             backdrop-filter: var(--glass-blur);
             -webkit-backdrop-filter: var(--glass-blur);
-            border-radius: 12px; /* Slightly sharper corners for a professional look */
+            border-radius: 10px;
             border: 1px solid var(--glass-border);
             box-shadow: var(--glass-shadow);
             color: var(--text-main);
             text-decoration: none;
             font-weight: 400;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             letter-spacing: 0.5px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
+            transition: all 0.3s ease;
         }
 
         .glass-link:hover {
-            transform: translateY(-3px);
+            transform: translateY(-2px);
             border-color: rgba(255, 255, 255, 0.3);
             background: rgba(255, 255, 255, 0.08);
             color: var(--main-accent);
-            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
         }
 
-        /* API Reviewer Notice */
         .api-notice {
-            margin-top: 35px;
-            padding: 20px;
+            margin-top: 20px;
+            padding: 12px 15px;
             background: rgba(255, 255, 255, 0.02);
-            border-radius: 12px;
+            border-radius: 10px;
             border: 1px solid rgba(255, 255, 255, 0.04);
-            font-size: 0.75rem;
+            font-size: 0.65rem;
             color: rgba(255, 255, 255, 0.35);
-            line-height: 1.6;
+            line-height: 1.4;
             width: 100%;
             text-align: left;
         }
 
         .api-notice h2 {
-            font-size: 0.85rem;
-            margin-bottom: 8px;
+            font-size: 0.75rem;
+            margin-bottom: 4px;
             color: rgba(255, 255, 255, 0.5);
             font-weight: 500;
-            letter-spacing: 0.5px;
         }
 
         .api-notice p {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .api-notice p:last-child {
@@ -189,8 +179,8 @@
         }
 
         .footer {
-            margin-top: 35px;
-            font-size: 0.75rem;
+            margin-top: 15px;
+            font-size: 0.65rem;
             color: rgba(255, 255, 255, 0.25);
             text-align: center;
             letter-spacing: 0.5px;
@@ -200,13 +190,11 @@
 <body>
 
     <div class="container">
-        <!-- Professional Logo Ring -->
         <div class="logo-wrapper">
             <div class="logo-bg"></div>
             <img src="logo.png" alt="Habitique Logo" class="profile-img">
         </div>
         
-        <!-- Premium Brand Typography -->
         <h1>Habitique</h1>
         <p class="tagline">Aesthetic Home & Kitchen Finds</p>
 
