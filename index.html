@@ -5,45 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Habitique | Aesthetic Home & Kitchen Finds</title>
     
-    <!-- PINTEREST VERIFICATION TAG - DO NOT REMOVE -->
+    <!-- Pinterest Verification Tag -->
     <meta name="p:domain_verify" content="30d561df671eff10ff2801e62dd140a8"/>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --text-main: #ffffff; 
-            --text-muted: #cbd5e1;
-            --accent: #38bdf8;
+            --bg-color: #0c0f1d;
+            --main-accent: #00d4ff;
+            --secondary-accent: #b76eff;
+            --text-main: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.7);
+            
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-blur: blur(10px);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
             color: var(--text-main);
             display: flex;
             justify-content: center;
             min-height: 100vh;
             padding: 40px 20px;
+            overflow-x: hidden;
             
-            /* Cool Animated Gradient Background */
-            background: linear-gradient(-45deg, #0f172a, #1e1b4b, #0c4a6e, #020617);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(183, 110, 255, 0.1) 0%, transparent 40%);
         }
 
         .container {
@@ -54,7 +58,6 @@
             align-items: center;
             animation: fadeIn 0.8s ease-out forwards;
             opacity: 0;
-            z-index: 1;
         }
 
         @keyframes fadeIn {
@@ -62,97 +65,151 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Profile Image */
+        .logo-wrapper {
+            position: relative;
+            margin-bottom: 25px;
+            z-index: 1;
+        }
+
+        .logo-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            z-index: -1;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+        }
+
         .profile-img {
-            width: 110px;
-            height: 110px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             object-fit: cover;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-            margin-bottom: 20px;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            background-color: rgba(255, 255, 255, 0.05);
+            display: block;
         }
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             font-weight: 600;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             letter-spacing: -0.5px;
+            background: linear-gradient(to bottom right, #fff, #bbb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .bio {
+        .tagline {
             font-size: 0.95rem;
             color: var(--text-muted);
             text-align: center;
-            margin-bottom: 32px;
-            line-height: 1.5;
-            max-width: 90%;
+            margin-bottom: 35px;
+            font-weight: 300;
+            line-height: 1.6;
         }
 
-        /* Glassmorphism Links Section */
         .link-container {
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 16px;
         }
 
-        .link-card {
+        .glass-link {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 100%;
             padding: 18px 24px;
-            text-decoration: none;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
             border-radius: 16px;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            color: var(--text-main);
+            text-decoration: none;
             font-weight: 500;
             font-size: 1rem;
-            color: var(--text-main);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            
-            /* Glass Effect */
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
         }
 
-        .link-card:hover {
+        .glass-link:hover {
             transform: translateY(-3px);
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.3);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-            color: var(--accent);
+            border-color: rgba(0, 212, 255, 0.3);
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--main-accent);
+            box-shadow: 0 12px 40px rgba(0, 212, 255, 0.2);
         }
 
-        /* Footer */
-        .footer {
-            margin-top: 40px;
-            font-size: 0.8rem;
+        /* Reviewer Information Box */
+        .api-notice {
+            margin-top: 35px;
+            padding: 18px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.75rem;
             color: rgba(255, 255, 255, 0.4);
+            line-height: 1.5;
+            width: 100%;
+            text-align: left;
+        }
+
+        .api-notice h2 {
+            font-size: 0.85rem;
+            margin-bottom: 6px;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 500;
+        }
+
+        .api-notice p {
+            margin-bottom: 8px;
+        }
+
+        .api-notice p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.3);
             text-align: center;
-            letter-spacing: 0.5px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- The code now looks for an image file named "logo.png" -->
-        <img src="logo.png" alt="Habitique Logo" class="profile-img">
+        <div class="logo-wrapper">
+            <div class="logo-bg"></div>
+            <img src="logo.png" alt="Habitique Logo" class="profile-img">
+        </div>
         
         <h1>Habitique</h1>
-        <p class="bio">Curating aesthetic, minimal, and functional home & kitchen finds for everyday living. ✨</p>
+        <p class="tagline">Aesthetic Home & Kitchen Finds</p>
 
         <div class="link-container">
-            <!-- PASTE YOUR ACTUAL URLS BETWEEN THE QUOTES IN THE href="" PART -->
-            <a href="https://your-amazon-link-here.com" target="_blank" class="link-card">🛒 Shop My Amazon Storefront</a>
-            <a href="https://your-kitchen-link-here.com" target="_blank" class="link-card">🤍 Minimalist Kitchen Essentials</a>
-            <a href="https://your-decor-link-here.com" target="_blank" class="link-card">🪔 Festive & Decor Top Picks</a>
-            <a href="https://your-coffee-link-here.com" target="_blank" class="link-card">☕ Coffee Bar Setup Guide</a>
+            <a href="#" class="glass-link">Shop Our Amazon Storefront</a>
+            <a href="#" class="glass-link">Featured Kitchen Curations</a>
+            <a href="#" class="glass-link">Cozy Home Decor Collection</a>
+        </div>
+
+        <div class="api-notice">
+            <h2>About the App</h2>
+            <p>Habitique is a private content management tool used to create, review, and publish Pinterest content for Habitique.</p>
+            <p>The application helps organize product-related Pinterest content, prepare Pin descriptions and destination links, and publish content to the connected Pinterest account after manual approval.</p>
+            <p>This application is intended for private, single-user use.</p>
         </div>
 
         <div class="footer">
